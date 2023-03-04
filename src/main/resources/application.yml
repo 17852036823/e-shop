@@ -1,0 +1,25 @@
+server:
+  port: 8097
+
+spring:
+  application:
+    name: E-SHOP
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/e_shop?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: root
+    password: root@12345
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis:
+  type-aliases-package: com.eshop.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/eshop/mapper/*.xml
+  call-setters-on-nulls: true
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
